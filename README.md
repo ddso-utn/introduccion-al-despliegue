@@ -78,7 +78,49 @@ Configurado en `.npmrc` usando dos opciones nativas de pnpm >= 10.16:
     └── nginx.conf     # Proxy con caché HTTP
 ```
 
-## Depliegue en PaaS
+## Despliegue en IaaS
+
+### Nativo
+
+```bash
+# conectarse por
+ssh root@MI-IP
+
+# instalar nvm
+sudo apt-get update
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.7/install.sh | bash
+ . .bashrc
+
+# descargar el código
+git clone https://github.com/ddso-utn/introduccion-al-despliegue.git
+
+# instalar la aplicación
+cd introduccion-al-despliegue/
+nvm install
+corepack enable && corepack prepare pnpm@10.16.0 --activate
+pnpm install --frozen-lockfile --prod
+
+# iniciar la aplicación
+pnpm start
+# iniciarla en segundo plano
+pnpm start > server.log 2>&1 &
+
+# pendiente: configurar por ejemplo ufw y monit o similar
+# consultar ahora http://MI-IP:3000/
+```
+
+### Con Docker
+
+```bash
+# instalar docker
+sudo apt-get update
+sudo apt-get install docker.io
+# dependiendo de la versión de docker / ubuntu puede no ser necesario
+sudo apt-get install docker-compose
+
+```
+
+## Despliegue en PaaS
 
 > Ejemplo usando [Render](https://render.com/)
 >
