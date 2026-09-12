@@ -5,6 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
+  console.log("Processando pedido")
   res.send(`${process.env.EMOJI_SALUDO} ¡Hola Mundo!`);
 });
 

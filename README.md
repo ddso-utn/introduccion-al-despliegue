@@ -116,13 +116,40 @@ pnpm start > server.log 2>&1 &
 >
 > docker push flbulgarelli/introduccion-al-despliegue:0.1
 
+
+Algunas ventajas del despliegue con docker
+
+* No necesito descargar el código fuente
+* No necesito construir al servidor node localmente
+* No necesito instalar los paquetes de node ni npm
+* No necesito hacer nada para que el software siga vivo cuando cierro la terminal
+
+
 ```bash
 # instalar docker
 sudo apt-get update
 sudo apt-get install docker.io
 # dependiendo de la versión de docker / ubuntu puede no ser necesario
 sudo apt-get install docker-compose
+
+# esto lo puedo hacer en cualquier directorio
+docker run -it --rm flbulgarelli/introduccion-al-despliegue:0.1
 ```
+
+
+
+Con Docker Compose, además:
+
+* No necesito hacer nada para que los procesos docker se levanten solos al iniciar la computadora
+* No necesité hacer nada para que los procesos docker se levanten solos si se caen
+
+```bash
+# esto hay que hacerlo en el directorio en que tenga el docker-compose.yml
+docker compose up
+# versiones más viejas
+docker-compose up
+```
+
 
 ## Despliegue en PaaS
 
