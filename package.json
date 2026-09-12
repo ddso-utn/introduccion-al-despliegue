@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Servidor Express mínimo con proxy NGINX y caché HTTP",
   "main": "index.js",
+  "packageManager": "pnpm@10.16.0",
   "engines": {
-    "node": ">=24"
+    "node": ">=24",
+    "pnpm": ">=10.16"
   },
   "scripts": {
     "start": "node index.js"

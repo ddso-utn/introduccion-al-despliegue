@@ -1,6 +1,7 @@
 .env
 .git
 .gitignore
+.nvmrc
 node_modules
 README.md
 nginx/
