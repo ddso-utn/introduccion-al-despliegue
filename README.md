@@ -25,6 +25,7 @@ Las variables se configuran en el archivo `.env` (ver `.env` de ejemplo en el re
 ## Correr en local (sin Docker)
 
 ```bash
+cp .env.example .env
 pnpm install
 pnpm start
 # → http://localhost:3000
@@ -33,6 +34,7 @@ pnpm start
 ## Correr con Docker Compose
 
 ```bash
+cp .env.example .env
 docker compose up --build
 # → http://localhost
 ```
