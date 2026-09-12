@@ -1,0 +1,16 @@
+{
+  "name": "hola-mundo-express",
+  "version": "1.0.0",
+  "description": "Servidor Express mínimo con proxy NGINX y caché HTTP",
+  "main": "index.js",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0"
+  }
+}
