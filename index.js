@@ -8,6 +8,9 @@ app.get('/', (req, res) => {
   res.send(`${process.env.EMOJI_SALUDO} ¡Hola Mundo!`);
 });
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
+
+process.on('SIGINT', () => server.close(() => process.exit(0)));
+process.on('SIGTERM', () => server.close(() => process.exit(0)));
