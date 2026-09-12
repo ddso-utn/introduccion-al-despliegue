@@ -111,13 +111,17 @@ pnpm start > server.log 2>&1 &
 
 ### Con Docker
 
+> Nota: si vas a construir localmente en lugar de en el servidor (lo recomendando)
+> es necesario crear una cuenta y un repositorio en dockerhub y hacer un push:
+>
+> docker push flbulgarelli/introduccion-al-despliegue:0.1
+
 ```bash
 # instalar docker
 sudo apt-get update
 sudo apt-get install docker.io
 # dependiendo de la versión de docker / ubuntu puede no ser necesario
 sudo apt-get install docker-compose
-
 ```
 
 ## Despliegue en PaaS
